@@ -21,4 +21,12 @@ describe Airport do
       expect(subject.landed_planes).to include(plane) 
     end
   end
+  describe '#take_off' do
+    it 'removes plane from landed_planes array' do
+      plane = Plane.new
+      subject.land(plane)
+      subject.take_off(plane)
+      expect(subject.landed_planes).to not_include(plane)
+    end
+  end
 end

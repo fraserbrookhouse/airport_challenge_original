@@ -7,7 +7,7 @@ class Airport
   def land(plane)
     @landed_planes.append(plane)
   end
-  def take_off
-
+  def take_off(plane)
+    
   end
 end
