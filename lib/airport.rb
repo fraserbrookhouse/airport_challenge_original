@@ -6,9 +6,10 @@ class Airport
   end
   def land(plane)
     @landed_planes.append(plane)
+    puts "#{plane} had landed"
   end
   def take_off(plane)
     @landed_planes.delete(plane)
-    @landed_planes
+    puts "#{plane} has departed"
   end
 end
