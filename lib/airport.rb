@@ -12,4 +12,11 @@ class Airport
     @landed_planes.delete(plane)
     puts "#{plane} has departed"
   end
+  def in_airport(plane)
+    if @landed_planes.contains(plane)
+      true
+    else
+      false
+    end
+  end
 end
