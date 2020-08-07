@@ -1,9 +1,11 @@
 require_relative 'plane'
 class Airport
-  @landed_planes = []
   attr_accessor :landed_planes
+  def initialize
+    @landed_planes = []
+  end
   def land(plane)
-    @landed_planes.push(plane)
+    @landed_planes.append(plane)
   end
   def take_off
 

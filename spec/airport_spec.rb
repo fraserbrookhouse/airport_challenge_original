@@ -10,6 +10,10 @@ describe Airport do
   it 'responds to method take_off' do
     expect(subject).to respond_to(:take_off)
   end
+  it 'responds to attr_accessor for landed_planes' do
+    expect(subject).to respond_to(:landed_planes)
+  end
+
   describe '#land' do
     it 'adds plane to landed_planes array' do
       plane = Plane.new
