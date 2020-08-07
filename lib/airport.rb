@@ -8,6 +8,6 @@ class Airport
     @landed_planes.append(plane)
   end
   def take_off(plane)
-    
+    @landed_planes.delete(plane)
   end
 end
