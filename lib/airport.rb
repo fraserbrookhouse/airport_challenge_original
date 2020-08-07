@@ -1,9 +1,8 @@
 require_relative 'plane'
 class Airport
-  @plane = []
+  @landed_planes = []
   def land(plane)
-    @plane = plane
-    @plane
+    @landed_planes.append(plane)
   end
   def take_off
 

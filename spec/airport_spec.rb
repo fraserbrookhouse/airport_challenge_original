@@ -11,10 +11,6 @@ describe Airport do
     expect(subject).to respond_to(:take_off)
   end
   describe '#land' do
-    it 'takes lands a plane' do
-      plane = Plane.new
-      expect(subject.land(plane)).to eq plane
-    end
     it 'adds plane to landed_planes array' do
       plane = Plane.new
       subject.land(plane)
