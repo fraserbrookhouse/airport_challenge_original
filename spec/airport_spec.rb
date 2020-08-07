@@ -7,6 +7,9 @@ describe Airport do
   it 'responds to method land' do
     expect(subject).to respond_to(:land)
   end
+  it 'responds to method take_off' do
+    expect(subject).to respond_to(:take_off)
+  end
   describe '#land' do
     it 'takes lands a plane' do
       plane = Plane.new
