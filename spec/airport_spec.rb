@@ -18,7 +18,7 @@ describe Airport do
     it 'adds plane to landed_planes array' do
       plane = Plane.new
       subject.land(plane)
-      expect(subject.landed_planes).to include(plane) 
+      expect(subject.landed_planes).to include(plane)
     end
   end
   describe '#take_off' do
