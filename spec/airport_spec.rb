@@ -33,6 +33,12 @@ describe Airport do
     end
   end
   describe '#full?' do
+    it 'responds false if landed_planes count is less than aiport_capacity' do
+      airport = Airport.new('clear', 20)
+      plane = Plane.new
+      aiport.land(plane)
+      expect(aiport.full?).to eq false
+    end
   end
   describe '#safe_land?' do
     it 'responds true when weather is not stormy and airport is not full' do
