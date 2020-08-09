@@ -38,6 +38,11 @@ describe Airport do
     it 'responds true when weather is not stormy and airport is not full' do
     end
   end
+  describe '#safe_takeoff?' do
+    it 'responds true when weather? equals true' do
+      expect(subject.safe_takeoff?).to eq true
+    end
+  end
   describe '#weather?' do
     it 'responds true when weather is not stormy' do
       expect(subject.weather?).to eq true
