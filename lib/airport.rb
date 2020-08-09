@@ -18,6 +18,7 @@ class Airport
   def land(plane)
     raise 'Weather not suitable for landing' if weather? == false
     raise 'Airport full, no space to land' if full?
+    raise 'Plane has already landed at airport' if landed_planes.include?(plane)
 
     @landed_planes.append(plane)
     puts "#{plane} has landed"

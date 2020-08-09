@@ -37,6 +37,7 @@ describe Airport do
       expect { subject.land Plane.new }.to raise_error 'Weather not suitable for landing'
     end
     it 'throws an error when plane tries to land but is already in the airport' do
+      allow(subject).to receive(:weather?) { true }
       plane = Plane.new
       subject.land(plane)
       expect { subject.land plane }.to raise_error 'Plane has already landed at airport'
