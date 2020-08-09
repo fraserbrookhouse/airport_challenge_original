@@ -27,6 +27,10 @@ class Airport
     end
   end
 
+  def safe_takeoff?
+    weather? == true
+  end
+
   def weather?
     weather != 'stormy'
   end
