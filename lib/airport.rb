@@ -12,6 +12,8 @@ class Airport
   end
 
   def land(plane)
+    raise 'Airport full, no space to land' if full?
+
     @landed_planes.append(plane)
     puts "#{plane} has landed"
   end
