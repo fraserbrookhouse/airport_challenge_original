@@ -27,6 +27,8 @@ class Airport
     puts "#{plane} has departed"
   end
 
+  private
+
   def in_airport(plane)
     if @landed_planes.include? plane
       true
