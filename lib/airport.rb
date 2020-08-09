@@ -17,6 +17,8 @@ class Airport
   end
 
   def take_off(plane)
+    raise 'Weather not suitable for flight' unless weather?
+
     @landed_planes.delete(plane)
     puts "#{plane} has departed"
   end
