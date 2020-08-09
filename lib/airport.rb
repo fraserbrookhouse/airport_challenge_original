@@ -16,10 +16,6 @@ class Airport
   end
 
   def land(plane)
-    raise 'Airport full, no space to land' if full?
-
-    raise 'Weather not suitable for landing' unless weather?
-
     @landed_planes.append(plane)
     puts "#{plane} has landed"
   end
@@ -43,14 +39,9 @@ class Airport
     landed_planes.count >= airport_capacity
   end
 
-  def safe_takeoff?
-    weather? == true
-  end
-
   def weather?
     possible_weather = %w[sunny cloudy raining stormy]
     @weather = possible_weather[rand(1..4)]
-    p @weather
-    weather != 'stormy'
+    @weather != 'stormy'
   end
 end
