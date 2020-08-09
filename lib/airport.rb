@@ -26,4 +26,8 @@ class Airport
       false
     end
   end
+
+  def weather?
+    weather != 'stormy'
+  end
 end
