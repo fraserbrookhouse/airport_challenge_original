@@ -36,6 +36,11 @@ describe Airport do
       allow(subject).to receive(:weather?) { false }
       expect { subject.land Plane.new }.to raise_error 'Weather not suitable for landing'
     end
+    it 'throws an error when plane tries to land but is already in the airport' do
+      plane = Plane.new
+      subject.land(plane)
+      expect { subject.land plane }.to raise_error 'Plane has already landed at airport'
+    end
   end
   describe '#take_off' do
     it 'removes plane from landed_planes array' do
