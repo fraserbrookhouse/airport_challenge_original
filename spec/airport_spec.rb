@@ -56,6 +56,7 @@ describe Airport do
       expect { subject.take_off Plane.new }.to raise_error 'Weather not suitable for flight'
     end
     it 'throws an error when a plane that is not in the airport is instructed to take off' do
+      allow(subject).to receive(:weather?) { true }
       expect { subject.take_off Plane.new }.to raise_error 'Plane is not currently at this airport'
     end
   end
