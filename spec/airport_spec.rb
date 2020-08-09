@@ -13,6 +13,9 @@ describe Airport do
   it 'responds to attr_accessor for landed_planes' do
     expect(subject).to respond_to(:landed_planes)
   end
+  it 'responds to attr_accessor for weather' do
+    expect(subject).to respond_to(:weather)
+  end
 
   describe '#land' do
     it 'adds plane to landed_planes array' do
