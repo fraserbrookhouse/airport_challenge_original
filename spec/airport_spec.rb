@@ -32,4 +32,15 @@ describe Airport do
       expect(subject.landed_planes).not_to include(plane)
     end
   end
+  describe '#full?' do
+  end
+  describe '#safe_land?' do
+    it 'responds true when weather is not stormy and airport is not full' do
+    end
+  end
+  describe '#weather?' do
+    it 'responds true when weather is not stormy' do
+      expect(subject.weather?).to eq true
+    end
+  end
 end
