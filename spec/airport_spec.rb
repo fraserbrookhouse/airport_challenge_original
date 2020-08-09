@@ -16,6 +16,9 @@ describe Airport do
   it 'responds to attr_accessor for weather' do
     expect(subject).to respond_to(:weather)
   end
+  it 'responds to attr_accessor for airport_capacity' do
+    expect(subject).to respond_to(:airport_capacity)
+  end
 
   describe '#land' do
     it 'adds plane to landed_planes array' do
@@ -36,8 +39,8 @@ describe Airport do
     it 'responds false if landed_planes count is less than aiport_capacity' do
       airport = Airport.new('clear', 20)
       plane = Plane.new
-      aiport.land(plane)
-      expect(aiport.full?).to eq false
+      airport.land(plane)
+      expect(airport.full?).to eq false
     end
   end
   describe '#safe_land?' do
