@@ -57,19 +57,4 @@ describe Airport do
       expect(airport.airport_capacity).to eq 30
     end
   end
-  describe '#full?' do
-    it 'responds false if landed_planes count is less than airport_capacity' do
-      allow(subject).to receive(:weather?) { true }
-      airport = Airport.new('clear', 20)
-      plane = Plane.new
-      airport.land(plane)
-      expect(airport.full?).to eq false
-    end
-  end
-  describe '#weather?' do
-    it 'responds true when weather is not stormy' do
-      allow(subject).to receive(:weather?) { true }
-      expect(subject.weather?).to eq true
-    end
-  end
 end

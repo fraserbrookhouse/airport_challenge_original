@@ -16,6 +16,9 @@ class Airport
   end
 
   def land(plane)
+    raise 'Weather not suitable for landing' if weather? == false
+    raise 'Airport full, no space to land' if full?
+
     @landed_planes.append(plane)
     puts "#{plane} has landed"
   end
