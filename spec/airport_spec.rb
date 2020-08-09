@@ -55,6 +55,9 @@ describe Airport do
       allow(subject).to receive(:weather?) { false }
       expect { subject.take_off Plane.new }.to raise_error 'Weather not suitable for flight'
     end
+    it 'throws an error when a plane that is not in the airport is instructed to take off' do
+      expect { subject.take_off Plane.new }.to raise_error 'Plane is not currently at this airport'
+    end
   end
   describe '#change_capacity' do
     it 'changes @airport_capacity to the integer it is passed, 30 in this case' do

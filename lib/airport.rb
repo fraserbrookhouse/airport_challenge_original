@@ -26,6 +26,7 @@ class Airport
 
   def take_off(plane)
     raise 'Weather not suitable for flight' unless weather?
+    raise 'Plane is not currently at this airport' unless landed_planes.include? plane
 
     @landed_planes.delete(plane)
     puts "#{plane} has departed"
