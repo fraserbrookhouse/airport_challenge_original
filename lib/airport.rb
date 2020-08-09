@@ -48,6 +48,9 @@ class Airport
   end
 
   def weather?
+    possible_weather = %w[sunny cloudy raining stormy]
+    @weather = possible_weather[rand(1..4)]
+    p @weather
     weather != 'stormy'
   end
 end

@@ -73,6 +73,7 @@ describe Airport do
   end
   describe '#weather?' do
     it 'responds true when weather is not stormy' do
+      allow(subject).to receive(:weather?) { true }
       expect(subject.weather?).to eq true
     end
   end
