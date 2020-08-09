@@ -47,6 +47,13 @@ describe Airport do
       expect { airport.take_off Plane.new }.to raise_error 'Weather not suitable for flight'
     end
   end
+  describe '#change_capacity' do
+    it 'changes @airport_capacity to the integer it is passed, 30 in this case' do
+      airport = Airport.new
+      airport.change_capacity(30)
+      expect(airport.airport_capacity).to eq 30
+    end
+  end
   describe '#full?' do
     it 'responds false if landed_planes count is less than aiport_capacity' do
       airport = Airport.new('clear', 20)
