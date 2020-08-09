@@ -67,6 +67,17 @@ describe Airport do
   end
   describe '#safe_land?' do
     it 'responds true when weather is not stormy and airport is not full' do
+      allow(subject).to receive(:weather?) { true }
+      expect(subject.safe_land?).to eq true
+    end
+    it 'responds false when weather? is false' do
+      allow(subject).to receive(:weather?) { false }
+      expect(subject.safe_land?).to eq false
+    end
+    it 'responds false when full? is false' do
+      allow(subject).to receive(:weather?) { true }
+      20.times { subject.land Plane.new }
+      expect(subject.safe_land?).to eq false
     end
   end
   describe '#safe_takeoff?' do
