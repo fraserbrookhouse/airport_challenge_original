@@ -11,6 +11,10 @@ class Airport
     @airport_capacity = default_capacity
   end
 
+  def change_capacity(num)
+    @airport_capacity = num
+  end
+
   def land(plane)
     raise 'Airport full, no space to land' if full?
 
