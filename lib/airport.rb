@@ -2,9 +2,11 @@ require_relative 'plane'
 
 class Airport
   attr_accessor :landed_planes
-  
-  def initialize
+  attr_accessor :weather
+
+  def initialize(current_weather = 'clear')
     @landed_planes = []
+    @weather = current_weather
   end
 
   def land(plane)
