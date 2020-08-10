@@ -5,9 +5,9 @@ class Airport
   attr_accessor :weather
   attr_accessor :airport_capacity
 
-  def initialize(current_weather = 'clear', default_capacity = 20)
+  def initialize(default_capacity = 20)
     @landed_planes = []
-    @weather = current_weather
+    @weather = 'sunny'
     @airport_capacity = default_capacity
   end
 
