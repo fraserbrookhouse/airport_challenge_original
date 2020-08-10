@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'plane'
 
 class Airport
@@ -34,7 +36,9 @@ class Airport
   # gives error if weather is stormy or plane is not at the airport
   def take_off(plane)
     raise 'Weather not suitable for flight' unless weather?
-    raise 'Plane is not currently at this airport' unless landed_planes.include? plane
+    unless landed_planes.include? plane
+      raise 'Plane is not currently at this airport'
+    end
 
     @landed_planes.delete(plane)
     puts "#{plane} has departed"
@@ -60,7 +64,7 @@ class Airport
   # returns false if weather is stormy, true otherwise
   def weather?
     possible_weather = %w[sunny cloudy raining stormy]
-    @weather = possible_weather[rand(1..4)]
+    @weather = possible_weather.sample
     @weather != 'stormy'
   end
 end
